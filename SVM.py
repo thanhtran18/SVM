@@ -25,7 +25,7 @@ class SupportVectorMachine(object):
     coef: float
         Bias term used in the polynomial kernel function.
     """
-    def __init__(self, C=1, kernel=linear_kernel, power=4, sigma=1, coef=1):
+    def __init__(self, C=1, kernel=polynomial_kernel, power=4, sigma=1, coef=1):
         self.C = C
         self.kernel = kernel
         self.power = power
