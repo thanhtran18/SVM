@@ -28,8 +28,9 @@ def polynomial_kernel(power, **kwargs):
 def rbf_kernel(sigma, **kwargs):
     def f(x1, x2):
         # fill in your code for RBF kernel (with hyparameter "sigma")
-        x1 = np.ravel(x1).reshape(x1.shape[0], 1)
-        x2 = np.ravel(x2).reshape(x2.shape[0], 1)
-        K = np.exp(- sum((x1 - x2) ** 2) / (np.dot(2, sigma ** 2)))
+        x1 = x1.reshape(x1.shape[0], 1)
+        x2 = x2.reshape(x2.shape[0], 1)
+        kernel = np.exp(- sum((x1 - x2) ** 2) / (np.dot(2, sigma ** 2)))
+        return kernel
 
     return f
